@@ -1,0 +1,16 @@
+# Secrets and local config
+config/config.php
+.env
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Dependencies and logs
+vendor/
+*.log
+
+# Uploads (if you add them later)
+uploads/
