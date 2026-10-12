@@ -1,3 +1,4 @@
+```php
 <?php
 require_once __DIR__ . '/../src/Auth.php';
 
@@ -20,10 +21,12 @@ $base = $base ?? ''; // use '../' for pages inside public subfolders
         <?php if (Auth::check()): ?>
             <nav class="nav">
                 <a href="<?= $base ?>dashboard.php">Dashboard</a>
-                <?php /* Add Units, Tenants, Leases and Payments links as those pages are built */ ?>
+                <a href="<?= $base ?>units/index.php">Units</a>
+<?php /* Add Tenants, Leases and Payments links as those pages are built */ ?>
                 <a href="<?= $base ?>logout.php">Log out</a>
             </nav>
         <?php endif; ?>
     </div>
 </header>
 <main class="container">
+```

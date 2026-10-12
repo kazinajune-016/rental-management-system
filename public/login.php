@@ -19,31 +19,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     $error = 'Invalid email or password.';
 }
+
+$pageTitle = 'Login';
+require __DIR__ . '/../templates/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Landlord Login</title>
-</head>
-<body>
+<div class="card card-narrow">
     <h1>Landlord Login</h1>
 
     <?php if ($error): ?>
-        <p style="color:red;"><?= htmlspecialchars($error) ?></p>
+        <p class="alert alert-error"><?= htmlspecialchars($error) ?></p>
     <?php endif; ?>
 
     <form method="post">
-        <p>
-            <label>Email<br>
-            <input type="email" name="email" value="<?= htmlspecialchars($email) ?>" required></label>
-        </p>
-        <p>
-            <label>Password<br>
-            <input type="password" name="password" required></label>
-        </p>
-        <button type="submit">Log in</button>
+        <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="<?= htmlspecialchars($email) ?>" required>
+        </div>
+        <div class="form-row">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit" class="btn">Log in</button>
     </form>
-</body>
-</html>
+</div>
+<?php require __DIR__ . '/../templates/footer.php'; ?>

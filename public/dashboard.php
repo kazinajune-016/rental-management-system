@@ -1,17 +1,12 @@
 <?php
 require __DIR__ . '/../src/Auth.php';
 Auth::requireLogin();
+
+$pageTitle = 'Dashboard';
+require __DIR__ . '/../templates/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard</title>
-</head>
-<body>
+<div class="card">
     <h1>Dashboard</h1>
     <p>Welcome, <?= htmlspecialchars($_SESSION['user_name']) ?>.</p>
-    <p><a href="logout.php">Log out</a></p>
-</body>
-</html>
+</div>
+<?php require __DIR__ . '/../templates/footer.php'; ?>
